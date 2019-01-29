@@ -1,0 +1,4 @@
+^node_modules$
+^srcjs$
+^webcamR\.Rproj$
+^\.Rproj\.user$
