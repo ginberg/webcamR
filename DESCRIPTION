@@ -1,13 +1,14 @@
 Package: webcamR
-Title: What the Package Does (One Line, Title Case)
+Title: Webcam HTMLWidget 
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Ger",
+           family = "Inberg",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: What license it uses
+           email = "ginberg@gmail.com")
+Description: Capturing the webcam input.
+Depends: R (>= 3.5.1)
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports: 
