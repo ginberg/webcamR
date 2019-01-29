@@ -5,12 +5,19 @@
 #' @import htmlwidgets
 #'
 #' @export
-webcamR <- function(captureButton = FALSE, width = NULL, height = NULL, elementId = NULL) {
+webcamR <- function(captureButton = FALSE, enableAudio = FALSE, width = NULL, height = NULL, elementId = NULL) {
 
   # describe a React component to send to the browser for rendering.
   component <- reactR::reactMarkup(
-    htmltools::tag("Webcam",
-                   list())
+    htmltools::tags$div(
+                      htmltools::tag(
+                        "Webcam",
+                        list(audio  = enableAudio,
+                             height = height,
+                             width  = width,
+                             screenshotFormat = "image/jpeg")),
+                      tags$p(),
+                      tags$button("Capture photo"))
   )
 
   # create widget
