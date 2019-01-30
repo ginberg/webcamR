@@ -7,17 +7,22 @@
 #' @export
 webcamR <- function(captureButton = FALSE, enableAudio = FALSE, width = NULL, height = NULL, elementId = NULL) {
 
+  videoConstraints = list(width      = 1280,
+                          height     = 720,
+                          facingMode = "user")
+
   # describe a React component to send to the browser for rendering.
   component <- reactR::reactMarkup(
     htmltools::tags$div(
                       htmltools::tag(
-                        "Webcam",
-                        list(audio  = enableAudio,
-                             height = height,
-                             width  = width,
-                             screenshotFormat = "image/jpeg")),
+                        "WebcamCapture",
+                        list(audio            = enableAudio,
+                             height           = height,
+                             videoConstraints = videoConstraints,
+                             screenshotFormat = "image/jpeg",
+                             width            = width)),
                       tags$p(),
-                      tags$button("Capture photo"))
+                      tags$button(onClick = "getScreenshot()", "Capture photo"))
   )
 
   # create widget
